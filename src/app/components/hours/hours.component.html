@@ -1,0 +1,12 @@
+<div class="hours">
+  <div
+    *ngFor="let item of hours; index as i"
+    (click)="hourClick(i)"
+    class="hours__item">
+    <span
+      class="hours__time">{{item.hour}}:00</span><!-- /hours__item-time -->
+    <span
+      *ngIf="item.meeting.title"
+      class="hours__title">{{item.meeting.title}}</span>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="calendar-wrap">
+
+  <div class="calendar-wrap__main">
+
+    <div class="calendar-wrap__dates">
+      <mat-calendar
+        (selectedChange)="dateChanged($event)"
+        [(selected)]="selected"></mat-calendar>
+    </div><!-- /calendar-wrap__dates -->
+
+    <div class="calendar-wrap__time">
+
+      <app-hours></app-hours>
+
+    </div><!-- /calendar-wrap__time -->
+
+  </div><!-- /calendar-wrap__main -->
+
+  <div class="calendar-wrap__list"></div><!-- /calendar-wrap__list -->
+
+</div><!-- /calendar-wrap -->

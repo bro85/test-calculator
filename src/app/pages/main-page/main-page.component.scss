@@ -1,0 +1,25 @@
+@import "variables";
+
+.calendar-wrap {
+  padding: 0 15px;
+  &__dates {
+    max-width: 300px;
+    width: 100%;
+  }
+  &__time {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .calendar-wrap {
+    &__main {
+      display: flex;
+    }
+    &__time {
+      padding-left: 15px;
+      width: calc(100% - 300px);
+    }
+  }
+}
+

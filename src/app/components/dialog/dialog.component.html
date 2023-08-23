@@ -1,0 +1,41 @@
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Meeting title</mat-label>
+    <input
+      matInput
+      [(ngModel)]="data.title">
+  </mat-form-field>
+  <div>
+    <mat-form-field appearance="fill">
+      <input
+        matInput
+        (click)="picker.open()"
+        [(ngModel)]="meetingDate"
+        (dateChange)="meetingDateChange()"
+        [matDatepicker]="picker">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+
+  <div class="hours-wrap">
+    <mat-form-field>
+      <mat-select
+        (selectionChange)="startTimeChange()"
+        [(value)]="meetingStartHour">
+        <mat-option
+          *ngFor="let hour of hours"
+          [value]="hour">
+          {{hour}}:00
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    - <span>{{meetingFinishHour}}:00</span>
+  </div>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data" (click)="deleteMeeting()" color="warn">Delete</button>
+  <button mat-button [mat-dialog-close]="data" (click)="acceptClick()" color="primary">Ok</button>
+</div>
